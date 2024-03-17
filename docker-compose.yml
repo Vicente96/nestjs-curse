@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  vmv_pg:
+    image: postgres:16.2
+    container_name: vmv_pg
+    restart: always
+    environment:
+      POSTGRES_DB: testdb
+      POSTGRES_USER: usrvmv
+      POSTGRES_PASSWORD: secret1234
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 5432:5432

@@ -1,0 +1,3 @@
+--CREATE DATABASE IF NOT EXISTS testdb
+SELECT 'CREATE DATABASE testdb'
+WHERE NOT EXISTS (SELECT FROM testdb WHERE datname = 'testdb')\gexec
